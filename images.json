@@ -1,82 +1,64 @@
 {
-    "images": [
+    "fastFoodPlaces": [
         {
-            "imgPath": "img/places/australia.jpg",
-            "imgLocation": "Australia",
-            "description": "Loch Ard Gorge",
-            "date": "01/01/2016"
+            "name": "Chipotle",
+            "rank": 1,
+            "description": "Chipotle offers a variety of customizable burritos, bowls, and tacos made with fresh, high-quality ingredients.",
+            "imgPath": "img/Places2/Chipotle.png"
         },
         {
-            "imgPath": "img/places/austria.jpg",
-            "imgLocation": "Austria",
-            "description": "Austrian chapel",
-            "date": "01/02/2016"
+            "name": "Wendy's",
+            "rank": 2,
+            "description": "Wendy's is known for its fresh, never frozen beef burgers, and their square-shaped patties are a signature feature.",
+            "imgPath": "img/Places2/Wendys.png"
         },
         {
-            "imgPath": "img/places/france.jpg",
-            "imgLocation": "Paris",
-            "description": "Eiffel Tower",
-            "date": "01/03/2016"
+            "name": "Five Guys",
+            "rank": 3,
+            "description": "Five Guys is famous for its juicy burgers, large portions of crispy fries, and customizable toppings.",
+            "imgPath": "img/Places2/Fiveguys.png"
         },
         {
-            "imgPath": "img/places/greece.jpg",
-            "imgLocation": "Greece",
-            "description": "Greek coastline",
-            "date": "01/04/2016"
+            "name": "Chick-fil-A",
+            "rank": 4,
+            "description": "Chick-fil-A is renowned for its tender chicken sandwiches, crispy waffle fries, and exceptional customer service.",
+            "imgPath": "img/Places2/Chick.png"
         },
         {
-            "imgPath": "img/places/hungary.jpg",
-            "imgLocation": "Hungary",
-            "description": "Budapest skyline",
-            "date": "01/05/2016"
+            "name": "McDonald's",
+            "rank": 5,
+            "description": "McDonald's delivers classic fast food, including their iconic Big Mac, fries, and the refreshing McFlurry.",
+            "imgPath": "img/Places2/Mcdonalds.png"
         },
         {
-            "imgPath": "img/places/india.jpg",
-            "imgLocation": "India",
-            "description": "Taj Mahal",
-            "date": "01/06/2016"
+            "name": "Popeyes",
+            "rank": 6,
+            "description": "Popeyes specializes in bold, flavorful Louisiana-style fried chicken, with perfectly seasoned biscuits and sides.",
+            "imgPath": "img/Places2/Popeyes.png"
         },
         {
-            "imgPath": "img/places/italy.jpg",
-            "imgLocation": "Italy",
-            "description": "Venice",
-            "date": "01/07/2016"
+            "name": "Taco Bell",
+            "rank": 7,
+            "description": "Taco Bell serves up quick and tasty Mexican-inspired dishes, with a variety of tacos, burritos, and unique combos.",
+            "imgPath": "img/Places2/Tacobell.png"
         },
         {
-            "imgPath": "img/places/japan.jpg",
-            "imgLocation": "Japan",
-            "description": "Hirosaki Castle",
-            "date": "01/08/2016"
+            "name": "Subway",
+            "rank": 8,
+            "description": "Subway allows you to create fresh sandwiches with a wide selection of meats, veggies, and sauces on freshly baked bread.",
+            "imgPath": "img/Places2/Suibway.png"
         },
         {
-            "imgPath": "img/places/korea.jpg",
-            "imgLocation": "South Korea",
-            "description": "Seoul",
-            "date": "01/09/2016"
+            "name": "Arby's",
+            "rank": 9,
+            "description": "Arby's is all about quality roast beef sandwiches, with signature curly fries and a variety of dipping sauces.",
+            "imgPath": "img/Places2/Arbys.png"
         },
         {
-            "imgPath": "img/places/norway.jpg",
-            "imgLocation": "Norway",
-            "description": "Countryside mountains",
-            "date": "01/10/2016"
-        },
-        {
-            "imgPath": "img/places/switzerland.jpg",
-            "imgLocation": "Switzerland",
-            "description": "Lake castle",
-            "date": "01/11/2016"
-        },
-        {
-            "imgPath": "img/places/thailand.jpg",
-            "imgLocation": "Thailand",
-            "description": "Beachline",
-            "date": "01/12/2016"
-        },
-        {
-            "imgPath": "img/places/turkey.jpg",
-            "imgLocation": "Turkey",
-            "description": "Istanbul",
-            "date": "01/13/2016"
+            "name": "Burger King",
+            "rank": 10,
+            "description": "Burger King is known for flame-grilled burgers, with the Whopper as its star offering, along with tasty sides and shakes.",
+            "imgPath": "img/Places2/Burgerking.webp"
         }
-  ]
+    ]
 }
