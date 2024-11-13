@@ -1,66 +1,80 @@
-let mCurrentIndex = 0 // Tracks the current image index
-let mImages = [] // Array to hold GalleryImage objects
-const mUrl = 'https://jsonkeeper.com/b/DDSZ' // Replace with actual JSON URL
-const mWaitTime = 5000 // Timer interval in milliseconds
+let mCurrentIndex = 0 
+let mImages = [] 
+const mUrl = 'images.json' 
+const mWaitTime = 5000 
+
+
 
 $(document).ready(() => {
-  $('.details').hide() // Hide details initiall
+  $('.details').hide() 
 
-    startTimer() 
+  startTimer();
   
-    $('.moreIndicator').on('click', function () {
-   
-
-      $('.moreIndicator').toggleClass('rot270 rot90');
-  
-
-      $('.details').slideToggle()
-  
+  $('.moreIndicator').on('click', function () {
+    $('.details').slideToggle();
+    $('.moreIndicator').toggleClass('rot90');
   })
+  $('#nextPhoto').on('click', showNextPhoto);
+  $('#prevPhoto').on('click', showPrevPhoto);
+
   fetchJSON()
 })
 
 
+
+
 function fetchJSON() {
-  
   $.ajax({
     url: mUrl,
-    dataType: "json",
-   
+    dataType: 'json',
     success: function (data) {
-      mImages = data.images
-  
-      swapPhoto()
+      mImages = data.images;
+      const image = mImages[mCurrentIndex];
+      $('#photo').attr('src', image.imgPath);
+      $('.name').text(`Name: ${image.name}`);
+      $('.rank').text(`Rank: ${image.rank}`);
+      $('.description').text(`Description: ${image.description}`);
+
+      console.log("This is a test to see if JSON file is loading!");
     },
     error: function () {
-      alert("Error file not working")
+      alert("Failed to load JSON file!");
     }
-  });
+  })
+
 }
 
 
-// Function to swap and display the next photo in the slideshow
-function swapPhoto () {
-  // Access mImages[mCurrentIndex] to update the image source and details
-  // Update the #photo element's src attribute with the current image's path
-  // Update the .location, .description, and .date elements with the current image's details
+
+
+function swapPhoto() {
+  const image = mImages[mCurrentIndex];
+  console.log(image.imgPath);
+  $('#photo').attr('src', image.imgPath);
+  $('.name').text(`Name: ${image.name}`);
+  $('.rank').text(`Rank: ${image.rank}`);
+  $('.description').text(`Description: ${image.description}`);
 }
 
-// Advances to the next photo, loops to the first photo if the end of array is reached
-function showNextPhoto () {
-  // Increment mCurrentIndex and call swapPhoto()
-  // Ensure it loops back to the beginning if mCurrentIndex exceeds array length
+
+
+function showNextPhoto() {
+  mCurrentIndex++;
+  if (mCurrentIndex == mImages.length) {
+    mCurrentIndex = 0;
+  }
+  swapPhoto()
 }
 
-// Goes to the previous photo, loops to the last photo if mCurrentIndex goes negative
-function showPrevPhoto () {
-  // Decrement mCurrentIndex and call swapPhoto()
-  // Ensure it loops to the end if mCurrentIndex is less than 0
+
+
+function showPrevPhoto() {
+  mCurrentIndex = (mCurrentIndex - 1 + mImages.length) % mImages.length;
+  swapPhoto()
 }
 
-// Starter code for the timer function
-function startTimer () {
-  // Create a timer to automatically call `showNextPhoto()` every mWaitTime milliseconds
-  // Consider using setInterval to achieve this functionality
-  // Hint: Make sure only one timer runs at a time
+
+
+function startTimer() {
+  setInterval(showNextPhoto, mWaitTime);
 }
