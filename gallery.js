@@ -3,8 +3,31 @@ let mImages = []
 const mUrl = 'images.json' 
 const mWaitTime = 5000 
 
+// Ajax fetching json yada yada
+function fetchJSON() {
+  $.ajax({
+    url: mUrl,
+    dataType: 'json',
+    success: function (data) {
+      mImages = data.images;
+      const image = mImages[mCurrentIndex];
+      $('#photo').attr('src', image.imgPath);
+      $('.name').text(`Name: ${image.name}`);
+      $('.rank').text(`Rank: ${image.rank}`);
+      $('.description').text(`Description: ${image.description}`);
+
+      console.log("This is a test to see if JSON file is loading");
+    },
+    error: function () {
+      alert("Failed to load JSON file");
+    }
+  })
+
+}
 
 
+
+// Timer
 $(document).ready(() => {
   $('.details').hide() 
 
@@ -23,30 +46,7 @@ $(document).ready(() => {
 
 
 
-function fetchJSON() {
-  $.ajax({
-    url: mUrl,
-    dataType: 'json',
-    success: function (data) {
-      mImages = data.images;
-      const image = mImages[mCurrentIndex];
-      $('#photo').attr('src', image.imgPath);
-      $('.name').text(`Name: ${image.name}`);
-      $('.rank').text(`Rank: ${image.rank}`);
-      $('.description').text(`Description: ${image.description}`);
-
-      console.log("This is a test to see if JSON file is loading!");
-    },
-    error: function () {
-      alert("Failed to load JSON file!");
-    }
-  })
-
-}
-
-
-
-
+// Photo shenanigans start
 function swapPhoto() {
   const image = mImages[mCurrentIndex];
   console.log(image.imgPath);
@@ -56,8 +56,6 @@ function swapPhoto() {
   $('.description').text(`Description: ${image.description}`);
 }
 
-
-
 function showNextPhoto() {
   mCurrentIndex++;
   if (mCurrentIndex == mImages.length) {
@@ -66,15 +64,12 @@ function showNextPhoto() {
   swapPhoto()
 }
 
-
-
 function showPrevPhoto() {
   mCurrentIndex = (mCurrentIndex - 1 + mImages.length) % mImages.length;
   swapPhoto()
 }
 
-
-
 function startTimer() {
   setInterval(showNextPhoto, mWaitTime);
 }
+// Photo shenanigans end
