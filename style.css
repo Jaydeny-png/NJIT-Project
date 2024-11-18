@@ -1,7 +1,7 @@
 body {
     overflow-x: hidden;
     font-family: 'Century Gothic', sans-serif;
-    background-image: url('../img/geometry.jpg');
+    background-image: url('img/location_Krusty_Krab_Ext_Color_LOP_fm_013--scaled.jpg');
     background-size: cover;
     background-attachment: fixed;
 }
@@ -81,11 +81,12 @@ Make it animate nicely. You'll need CSS3 for this */
 /* Add CSS styles to rotate the element 180deg
 Make it animate nicely. You'll need CSS3 for this */
 .rot180 {
-    /* Add 180-degree rotation */
+    transform: rotate(180deg);
+    transition: transform 1s;
 }
 
 /* Add CSS styles to rotate the element 270deg
 Make it animate nicely. You'll need CSS3 for this */
 .rot270 {
-    /* Add 270-degree rotation */
+
 }
